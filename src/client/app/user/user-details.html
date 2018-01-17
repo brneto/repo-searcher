@@ -1,0 +1,48 @@
+
+<div class="row">
+  <div class="col-md-12">
+    <h2>{{vm.user.name}}</h2>
+
+    <img ng-src="{{vm.user.avatar_url}}" title="{{vm.user.name}}">
+    <div ng-if="vm.user.location">Location: {{vm.user.location}}</div>
+    <br />
+
+    Order:
+    <select ng-model="vm.repoSortOrder">
+      <option value="+name">Name</option>
+      <option value="-stargazers_count">Stars</option>
+      <option value="+language">Language</option>
+    </select>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Stars</th>
+          <th>Language</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="repo in vm.repos | orderBy:vm.repoSortOrder">
+          <td>
+            <!-- <a class="btn btn-link btn-lg navbar-btn"
+            ui-sref="userdetails.repodetails({reponame: repo.name})"
+            ng-click="vm.repoClicked=repo"> -->
+            <a class="btn btn-link btn-lg navbar-btn"
+            ng-click="vm.repoClicked=repo">
+              {{repo.name}}
+            </a>
+          </td>
+          <td>{{repo.stargazers_count | number}}</td>
+          <td>{{repo.language}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <a class="btn btn-link" ui-sref="usersearcher">Back to search</a>
+  </div>
+</div>
+<!-- <div ui-view></div> -->

@@ -1,0 +1,10 @@
+<div>Issues: {{vm.repo.open_issues_count | number}}</div>
+
+<div>
+	<ul>
+		<li data-ng-repeat="user in vm.repo.collaborators">
+			<img data-ng-src="{{user.avatar_url}}" alt="{{user.login}}">
+			{{user.login}}
+		</li>
+  </ul>
+</div>

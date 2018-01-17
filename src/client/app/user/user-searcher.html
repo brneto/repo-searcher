@@ -1,0 +1,11 @@
+<div>
+  <h1>{{vm.title}}</h1>
+
+  <div ng-if="vm.countdown">Timer: {{vm.countdown}}</div>
+  <form name="searchUser" ng-submit="vm.searchUser(vm.username)">
+    <input required type="search" placeholder="Username do find" ng-model="vm.username" />
+    <input type="submit" value="Search" />
+  </form>
+
+  <p ng-if="vm.error">Transition failed: {{vm.error}}</p>
+</div>

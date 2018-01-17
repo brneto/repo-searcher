@@ -1,0 +1,6 @@
+{
+	"presets": [
+		["env", { "loose": true, "modules": "commonjs" }]
+	],
+	"plugins": ["angularjs-annotate", "transform-class-properties"]
+}
